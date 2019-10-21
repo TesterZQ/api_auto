@@ -6,7 +6,7 @@ from ddt import ddt,data,unpack
 import json
 
 #打开表格
-do_excel = DoExcel(contants.case_file)
+do_excel = DoExcel(contants.case_file1)
 #定位表单
 cases = do_excel.get_cases('login')
 @ddt
@@ -14,6 +14,7 @@ class TestLogin(unittest.TestCase):
 
     def setUp(self):
         print('测试数据准备')
+
     #使用ddt把表单内的全部数据取出
     @data(*cases)
     def test_login(self,case):
@@ -30,3 +31,4 @@ class TestLogin(unittest.TestCase):
         self.assertEqual(case.expected,resp.get_text())
     def tearDown(self):
         print('测试清除')
+

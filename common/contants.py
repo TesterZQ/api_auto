@@ -12,6 +12,10 @@ datas_dir = os.path.join(file_dir,'datas')#datas文件夹路径
 #通过路径拼接获取datas文件夹下的api.xlsx文件路径，供测试用例内调用
 case_file = os.path.join(datas_dir,'api.xlsx')
 print(case_file)
-report_dir = os.path.join(file_dir,'report')#report文件夹路径
 
+case_file1=os.path.join(datas_dir,'cases.xlsx')
+print(case_file1)
+
+
+report_dir = os.path.join(file_dir,'report')#report文件夹路径
 logs_dir = os.path.join(file_dir,'logs')#logs文件夹路径

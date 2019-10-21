@@ -11,18 +11,18 @@ class Readconfig:
     def __init__(self):
         self.cf = configparser.ConfigParser()
         # 加载配置文件。配置文件的绝对路径
-        file_name = os.path.join(contants.file_path, 'globla.conf')
+        file_name = os.path.join(contants.file_path,'globla.conf')
         #读取配置文件
-        self.cf.read(filenames=file_name)
+        self.cf.read(filenames=file_name,encoding='utf-8')
         #判断配置文件，如果为True执行，再次读取test_data_conf.conf配置文件，如果flase读取第二个配置文件
         if self.getboolean_1('swtich','on'):
             test_data_conf = os.path.join(contants.file_path, 'test_data_conf.conf')
             # 读取配置文件
-            self.cf.read(filenames=test_data_conf)
+            self.cf.read(filenames=test_data_conf,encoding='utf-8')
         else:
             test_data_conf2 = os.path.join(contants.file_path, 'test_data_conf2.conf')
             # 读取配置文件
-            self.cf.read(filenames=test_data_conf2)
+            self.cf.read(filenames=test_data_conf2,encoding='utf-8')
 
 
     def get(self,section,option):
