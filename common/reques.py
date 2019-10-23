@@ -31,10 +31,8 @@ class Request:
         '''#返回响应正文'''
         return self.resp.json()
 
-    def get_cookies(self,key):#封装，返回cookie
-        if key is not None:
-            return self.resp.cookies[key]
-        else:
-            return self.resp.cookies  #返回cookie对象
+    def get_cookies(self):#封装，返回cookie
+        return self.resp.cookies
+
 
 
