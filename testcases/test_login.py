@@ -5,6 +5,7 @@ from common.reques import Request
 from ddt import ddt,data,unpack
 import json
 
+
 #打开表格
 do_excel = DoExcel(contants.case_file1)
 #定位表单

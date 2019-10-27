@@ -5,6 +5,7 @@ from common import contants
 import json
 class Case:
     def __init__(self):
+        '''定义一个类描述测试数据'''
         self.case_id = None
         self.title = None
         self.url = None

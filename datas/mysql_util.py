@@ -28,11 +28,21 @@ class MysqlUtil:
             raise e
 
     #第三步建立游标
-    def fetch_one(self,slq_str):
+    def fetch_one(self,sql_str):
         '''查询一条数据并且返回'''
         cursor = self.mysql.cursor()#建立游标，返回游标实例
-        cursor.execute(slq_str)#根据sql进行查询
+        cursor.execute(sql_str)#根据sql进行查询
+        self.mysql.commit()#提交
         return cursor.fetchone()#返回一条数据
+
+    def fetch_all(self,sql_str):
+        '''查询多条数据'''
+        cursor = self.mysql.cursor()  # 建立游标，返回游标实例
+        cursor.execute(sql_str)  # 根据sql进行查询
+        return cursor.fetchone()  # 返回一条数据
+    def sql_colese(self):
+        return self.mysql.close()
+
 if __name__ == '__main__':
     #第二步
     sql = 'SELECT * FROM future.member ORDER BY MobilePhone LIMIT 1'
